@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <div id="bodyy"></div>
+    <div class="nav-bar">
+        <nav>
+            <a href="#home" id="home">Home</a>
+            <a href="#add-task" id="addtask">Add Task</a>
+            <a href="#reminderList" id="edittask">Ongoing Task</a>
+        </nav>
+    </div>
+
+    <div class="full-body" id="full-body">
+        <div id="home">
+            <h1>Task Manager</h1>
+            <span id="dark-mode-toggle" style="cursor: pointer; font-size: 24px; position: absolute; right: 40px; top: 85px;">🌙</span>
+        </div>
+
+        <div id="ongoing">
+            <h3>Ongoing Task</h3>
+            <div id="ongoing1">
+                <ul id="reminderList" class="task-list">
+                    <!-- Tasks will be dynamically added here -->
+                </ul>
+            </div>
+        </div>
+
+    <div id="road">
+    <h2  style="margin-top: 10px;">New Task</h2>
+
+    <div id="add-task">
+        <div class="wrapper">
+            <div class="container-calendar" id="container-calendar" >
+                <div id="left">
+                    <h1>Task Aggregator</h1>
+                    <div id="event-section">
+                        <h3>Add Event</h3>
+                        <input type="date" id="eventDate">
+                        <input type="text"
+                            id="eventTitle"
+                            placeholder="Event Title">
+                        <input type="text"
+                            id="eventDescription"
+                            placeholder="Event Description">
+                          <br>
+                            <label for="eventPriority">Priority:</label>
+                            <select id="eventPriority">
+                                <option value="High">High</option>
+                                <option value="Medium">Medium</option>
+                                <option value="Low">Low</option>
+                            </select>
+                            <br>
+                            <label for="category">Category:</label>
+                            <select id="category">
+                                <option value="work">Work</option>
+                                <option value="personal">Personal</option>
+                            </select>
+
+                        <button id="addEvent" onclick="addEvent()">
+                            Add
+                        </button>
+                    </div>
+                </div>
+                <div id="right">
+                    <h3 id="monthAndYear"></h3>
+                    <div class="button-container-calendar">
+                        <button id="previous"
+                                onclick="previous()">
+                              ‹
+                          </button>
+                        <button id="next"
+                                onclick="next()">
+                              ›
+                          </button>
+                    </div>
+                    <table class="table-calendar"
+                           id="calendar"
+                           data-lang="en">
+                        <thead id="thead-month"></thead>
+                        <!-- Table body for displaying the calendar -->
+                        <tbody id="calendar-body"></tbody>
+                    </table>
+                    <div class="footer-container-calendar">
+                        <label for="month">Jump To: </label>
+                        <!-- Dropdowns to select a specific month and year -->
+                        <select id="month" onchange="jump()">
+                            <option value=0>Jan</option>
+                            <option value=1>Feb</option>
+                            <option value=2>Mar</option>
+                            <option value=3>Apr</option>
+                            <option value=4>May</option>
+                            <option value=5>Jun</option>
+                            <option value=6>Jul</option>
+                            <option value=7>Aug</option>
+                            <option value=8>Sep</option>
+                            <option value=9>Oct</option>
+                            <option value=10>Nov</option>
+                            <option value=11>Dec</option>
+                        </select>
+                        <!-- Dropdown to select a specific year -->
+                        <select id="year" onchange="jump()"></select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+<script src="./index.js"></script>
+</body>
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script>
+  particlesJS('bodyy', {
+    particles: {
+      number: { value: 80, density: { enable: true, value_area: 800 } },
+      color: { value: '#ffffff' },
+      shape: { type: 'circle', stroke: { width: 0, color: '#000000' }, polygon: { nb_sides: 5 }, image: { src: 'img/github.svg', width: 100, height: 100 } },
+      opacity: { value: 0.5, random: false, anim: { enable: false, speed: 1, opacity_min: 0.1, sync: false } },
+      size: { value: 3, random: true, anim: { enable: false, speed: 40, size_min: 0.1, sync: false } },
+      line_linked: { enable: true, distance: 150, color: '#ffffff', opacity: 0.4, width: 1 },
+      move: { enable: true, speed: 6, direction: 'none', random: false, straight: false, out_mode: 'out', bounce: false, attract: { enable: false, rotateX: 600, rotateY: 1200 } }
+    },
+    interactivity: {
+      detect_on: 'canvas',
+      events: { onhover: { enable: true, mode: 'repulse' }, onclick: { enable: true, mode: 'push' }, resize: true },
+      modes: { grab: { distance: 400, line_linked: { opacity: 1 } }, bubble: { distance: 400, size: 40, duration: 2, opacity: 8, speed: 3 }, repulse: { distance: 200, duration: 0.4 }, push: { particles_nb: 4 }, remove: { particles_nb: 2 } }
+    },
+    retina_detect: true
+});
+</script>
+
+</html>

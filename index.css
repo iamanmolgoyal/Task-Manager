@@ -1,0 +1,401 @@
+a{
+    text-decoration: none;
+    padding: 20px;
+    color: aliceblue;
+	font-family: sans-serif;
+}
+nav{
+    display: flex;
+    justify-content: right;
+    
+}
+body{
+    background-color: rgb(1, 1, 45);
+	
+}
+
+.full-body{
+    margin: 12px;
+    background-color: aliceblue;
+	opacity: 0.9;
+	border-radius: 8px;
+    
+}
+#ongoing{
+    background-color: white;
+    margin: 10px;
+}
+#ongoing1{
+    display: flex;
+    justify-content: space-between;
+	
+}
+
+
+html{
+	scroll-behavior: smooth;	
+}
+
+#eventPriority {
+    margin: 10px 0;
+    padding: 5px;
+    width: 71%;
+}
+#category {
+    margin: 10px 0;
+    padding: 5px;
+    width: 68%;
+}
+
+/* task box  */
+#ongoing1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+#ongoing1 .task-list {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+    list-style: none; /* Remove default list styles */
+}
+
+#ongoing1 .task-list li {
+    /* flex: 0 0 calc(33.33% - 20px); Adjust width to fit three tasks per row */
+    margin: 10px;
+}
+
+.on-task1{
+    border-radius: 3px;
+    /* background-color: #adb5bd; */
+	background: linear-gradient(to right, #ff9a9e, #fecfef);
+	color: black;
+	text-align: center;
+	width: 300px;
+    height: 190px;
+	padding-top: 20px; /* Add padding to the top of the box */
+    box-sizing: border-box;
+}
+.on-task2{
+    border-radius: 3px;
+	background: linear-gradient(to right, #3366ff, #a0c0ff);
+	color: black;
+	padding-top: 20px; /* Add padding to the top of the box */
+    box-sizing: border-box;
+	text-align: center;
+	width: 300px;
+    height: 190px;
+}
+.on-task3{
+    border-radius: 3px;
+    /* background-color: #adb5bd; */
+	background-color: #ff7878;
+    background-image: linear-gradient(315deg, #ff7878 0%, #ff0000 74%);
+	padding-top: 20px; /* Add padding to the top of the box */
+    box-sizing: border-box;
+	color: black;
+	text-align: center;
+	width: 300px;
+    height: 190px;
+}
+
+#road{
+    background-color: white;
+    margin: 10px;
+}
+
+
+/* add task  */
+
+
+/* General styling for the entire page */
+body {
+	font-family: Arial, sans-serif;
+	/* background-color: white; */
+	margin: 0;
+}
+
+.wrapper {
+	max-width: 1100px;
+	margin: 15px auto;
+}
+
+/* Calendar container */
+.container-calendar {
+	background: #ffffff;
+	/* background: linear-gradient(to right, #ff9a9e, #fecfef); */
+
+	padding: 15px;
+	max-width: 900px;
+	margin: 0 auto;
+	overflow: auto;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	display: flex;
+	justify-content: space-between;
+}
+
+/* Event section styling */
+#event-section {
+	padding: 10px;
+	background: #f5f5f5;
+	margin: 20px 0;
+	border: 1px solid #ccc;
+}
+
+.container-calendar #left h1 {
+	/* color: green; */
+	color: #3498db;
+	text-align: center;
+	background-color: #f2f2f2;
+	margin: 0;
+	padding: 10px 0;
+}
+
+#event-section h3 {
+	/* color: green; */
+	color: #3498db;
+	font-size: 18px;
+	margin: 0;
+}
+
+#event-section input[type="date"],
+#event-section input[type="text"] {
+	margin: 10px 0;
+	padding: 5px;
+	width: 80%;
+}
+
+#event-section button {
+	background: green;
+	color: white;
+	border: none;
+	padding: 5px 10px;
+	cursor: pointer;
+}
+
+.event-marker {
+	position: relative;
+}
+
+.event-marker::after {
+	content: '';
+	display: block;
+	width: 6px;
+	height: 6px;
+	background-color: red;
+	border-radius: 50%;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+
+/* event tooltip styling */
+.event-tooltip {
+	position: absolute;
+	background-color: rgba(234, 232, 232, 0.763);
+	color: black;
+	padding: 10px;
+	border-radius: 4px;
+	bottom: 20px;
+	left: 50%;
+	transform: translateX(-50%);
+	display: none;
+	transition: all 0.3s;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+	z-index: 1;
+}
+
+.event-marker:hover .event-tooltip {
+	display: block;
+}
+
+/* Reminder section styling */
+#reminder-section {
+	padding: 10px;
+	background: #f5f5f5;
+	margin: 20px 0;
+	border: 1px solid #ccc;
+}
+
+#reminder-section h3 {
+	color: green;
+	font-size: 18px;
+	margin: 0;
+}
+
+#reminderList {
+	list-style: none;
+	padding: 0;
+}
+
+#reminderList li {
+	margin: 5px 0;
+	font-size: 16px;
+}
+
+/* Style for the edit and complete buttons */
+.edit-event, .complete-event {
+    background: orange;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.complete-event {
+    background: green;
+}
+
+
+/* Style for the delete buttons */
+.delete-event {
+	background: rgb(237, 19, 19);
+	color: white;
+	border: none;
+	padding: 5px 10px;
+	cursor: pointer;
+	margin-left: 10px;
+	align-items: right;
+}
+
+/* Buttons in the calendar */
+.button-container-calendar button {
+	cursor: pointer;
+	background: green;
+	color: #fff;
+	border: 1px solid green;
+	border-radius: 4px;
+	padding: 5px 10px;
+}
+
+/* Calendar table */
+.table-calendar {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+.table-calendar td,
+.table-calendar th {
+	padding: 5px;
+	border: 1px solid #e2e2e2;
+	text-align: center;
+	vertical-align: top;
+}
+
+/* Date picker */
+.date-picker.selected {
+	background-color: #f2f2f2;
+	font-weight: bold;
+	outline: 1px dashed #00BCD4;
+}
+
+.date-picker.selected span {
+	border-bottom: 2px solid currentColor;
+}
+
+/* Day-specific styling */
+.date-picker:nth-child(1) {
+	color: red;
+	/* Sunday */
+}
+
+.date-picker:nth-child(6) {
+	color: green;
+	/* Friday */
+}
+
+/* Hover effect for date cells */
+.date-picker:hover {
+	background-color: green;
+	color: white;
+	cursor: pointer;
+}
+
+/* Header for month and year */
+#monthAndYear {
+	text-align: center;
+	margin-top: 0;
+}
+
+/* Navigation buttons */
+.button-container-calendar {
+	position: relative;
+	margin-bottom: 1em;
+	overflow: hidden;
+	clear: both;
+}
+
+#previous {
+	float: left;
+}
+
+#next {
+	float: right;
+}
+
+/* Footer styling */
+.footer-container-calendar {
+	margin-top: 1em;
+	border-top: 1px solid #dadada;
+	padding: 10px 0;
+}
+
+.footer-container-calendar select {
+	cursor: pointer;
+	background: #ffffff;
+	color: #585858;
+	border: 1px solid #bfc5c5;
+	border-radius: 3px;
+	padding: 5px 1em;
+}
+#bodyy {
+    width: 100%;
+    height: 100%;
+    background-color: #064a8b;
+    background-image: url('');
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    z-index: -50;
+    position: fixed;
+}
+/* Existing CSS */
+
+/* Dark Mode CSS */
+.dark-mode {
+    background-color: #121212; /* Dark background color */
+    color: white; /* White text color */
+}
+
+.dark-mode .nav-bar nav a {
+    color: white;
+}
+
+.dark-mode #add-task, 
+.dark-mode #ongoing, 
+.dark-mode #road,
+.dark-mode #container-calendar,
+.dark-mode #event-section,
+.dark-mode #left {
+    background-color: #1e1e1eb7; /* Slightly lighter dark background */
+    color: white;
+}
+.dark-mode #bodyy{
+	background-color: #000d1a;
+}
+.dark-mode #full-body{
+	background-color: #070707; /* Slightly lighter dark background */
+    color: white;
+}
+
+.dark-mode button {
+    background-color: #333;
+    color: white;
+    border: 1px solid white;
+}
+
+
+	
